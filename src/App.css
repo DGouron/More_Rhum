@@ -2,15 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
+.bottle {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +22,24 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes SpinBottle {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.rhum--button {
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+.rhum--button:hover {
+  transform: scale(1.02);
+}
+.rhum--button:active {
+  animation: SpinBottle infinite 1s linear;
 }

@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import bottle from "./assets/rhum_bottle.png";
+import "./App.css";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { incrementByAmount, increment } from "./features/counter/counterSlice";
 
 function App() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let interval = null;
+
+    interval = setInterval(() => {
+      dispatch(increment());
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  });
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p>Money : {count}$</p>
+        <button
+          class="rhum--button"
+          onClick={() => {
+            handleClick();
+          }}
         >
-          Learn React
-        </a>
+          <img src={bottle} className="bottle" alt="bottle" />
+        </button>
       </header>
     </div>
   );
+
+  function handleClick() {
+    dispatch(incrementByAmount(10));
+  }
 }
 
 export default App;
