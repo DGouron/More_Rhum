@@ -1,0 +1,189 @@
+@import "./Utils/variables";
+@import "./Utils/mixins";
+
+html,
+body,
+.app {
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  font-size: 16px;
+  color: $color-light;
+  background-color: $color-dark;
+}
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.research__container{
+  margin: 0 40px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #333;
+
+  .research__tab{
+    position: relative;
+    background: #FFF;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .research__tab .research__tab__content{
+    max-height: 0;
+    transition: 1s;
+    overflow: hidden;
+  }
+  .research__tab input{
+    appearance: none;
+  }
+
+  .research__tab label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::after{
+      content: "+";
+      position: absolute;
+      right: 20px;
+      font-size: 2em;
+      color: rgba(0,0,0,0.1);
+      transition: transform 1s;
+
+      &:hover{
+        color: #333;
+      }
+    }
+  }
+  .research__tab input:checked ~ label::after{
+    transform: rotate(135deg);
+  }
+  .research__tab input:checked ~ .research__tab__content{
+    max-height: 100vh;
+  }
+  .research__tab label h3{
+    width: auto;
+    height: 40px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .research__tab label h4{
+    position: relative;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+  }
+  .research__tab .research__tab__content .research__tab__content--position{
+    position: relative;
+    padding: 10px 0;
+    color: #333;
+    z-index: 10;
+  }
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $wave-color;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    color: $color-light;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  .wave{
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(wave.png);
+    filter: sepia(100%);
+    background-size: 1000px 100px;
+
+    &#wave1{
+      @include setup-wave(1000, 1, 0, animateWave 4s linear infinite);
+    }
+    &#wave2{
+      @include setup-wave(999, .5, 0, animateWave_02 4s linear infinite);
+    }
+    &#wave3{
+      @include setup-wave(1000, .2, 15px, animateWave 3s linear infinite);
+    }
+    &#wave4{
+      @include setup-wave(999, .7, 20px, animateWave_02 3s linear infinite);
+    }
+  }
+}
+@keyframes animateWave{
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+@keyframes animateWave_02{
+  0%{
+    background-position-x: 0px;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
+.bottle {
+  height: 40vmin;
+  pointer-events: none;
+}
+.board__container{
+  display: flex;
+  justify-content: space-around;
+}
+
+@keyframes SpinBottle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+.boat{
+  width: 120px;
+  height: 120px;
+}
+.rhum__button {
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+.rhum__button:hover {
+  transform: scale(1.02);
+}
+.rhum__button:active {
+  animation: SpinBottle .6s ease-in-out infinite;
+}

@@ -17,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch ./src/Assets/Styles/Sass/main.scss:./src/Assets/Styles/css/style.css",
+    "prefix": "postcss ./src/Assets/Styles/css/style.css --use autoprefixer -d ./src/Assets/Styles/css/prefixed/"
   },
   "eslintConfig": {
     "extends": [
@@ -29,12 +31,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 4 versions"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 4 versions"
     ]
   }
 }

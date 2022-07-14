@@ -1,44 +1,23 @@
-import bottle from "./assets/rhum_bottle.png";
-import "./App.css";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { incrementByAmount, increment } from "./features/counter/counterSlice";
+import "./assets/Styles/css/prefixed/style.css";
+import CoreButton from "./features/CoreButton";
+import Footer from "./features/Footer";
+import MoneyView from "./features/MoneyView";
+import ResearchBox from "./features/research/ResearchBox";
 
 function App() {
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    let interval = null;
-
-    interval = setInterval(() => {
-      dispatch(increment());
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Money : {count}$</p>
-        <button
-          class="rhum--button"
-          onClick={() => {
-            handleClick();
-          }}
-        >
-          <img src={bottle} className="bottle" alt="bottle" />
-        </button>
+    <>
+      <header>
       </header>
-    </div>
+      <main>
+        <MoneyView />
+        <CoreButton />
+        <ResearchBox />
+      </main>
+      <Footer />
+    </>
   );
-
-  function handleClick() {
-    dispatch(incrementByAmount(10));
-  }
 }
 
 export default App;
