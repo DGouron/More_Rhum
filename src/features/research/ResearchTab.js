@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ResearchTab(tabData) {
-    console.table(tabData.research);
+function ResearchTab(props) {
+
   return (
-    <div>{tabData} </div>
+    <div>Recherche tree: {props.researchBranch.type} </div>
   )
 }
 

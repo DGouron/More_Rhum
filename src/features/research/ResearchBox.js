@@ -3,13 +3,12 @@ import { data_research } from '../data/data_research';
 import ResearchTab from './ResearchTab';
 
 function ResearchBox() {
-    const research = data_research;
   return (
     <section className="research__container">
         <h2>Research</h2>
-        {research.researchTree.map((research) => {
+        {data_research.map((researchBranch) => {
             return (
-                <ResearchTab tabData={research}/>
+                <ResearchTab researchBranch={researchBranch}/>
             )
         })}
         <div className="research__tab">
