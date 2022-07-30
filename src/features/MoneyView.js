@@ -2,9 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 function MoneyView() {
-    const count = useSelector((state) => state.counter.value);
+    const count = useSelector((state) => state.counter.money);
   return (
-    <><p>Money : {count}$</p></>
+    <div className='Moneyview__wrapper'><p>Money : {count}$</p></div>
   )
 }
 

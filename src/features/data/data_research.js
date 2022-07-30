@@ -6,15 +6,15 @@ export const data_research =
         "research": [
             {
                 "id": "1",
-                "name": "Boat",
-                "description": "Vous pouvez construire une barque",
+                "name": "Bottle",
+                "description": "Stocker votre Rhum dans une bouteille",
                 "cost": 100,
-                "time": 10
+                "time": 10,
             },
             {
                 "id": "2",
-                "name": "Big Boat",
-                "description": "Vous pouvez construire un gros bateau",
+                "name": "Petite Piscine",
+                "description": "Stocker votre Rhum dans une petite piscine",
                 "cost": 100,
                 "time": 10
             }
@@ -41,13 +41,20 @@ export const data_research =
         ]
     },
     {
-        "type": "Général",
-        "description": "Général",
+        "type": "Laboratoire",
+        "description": "Votre labo de recherche personnel",
         "research": [
             {
                 "id": "1",
-                "name": "Navigation",
-                "description": "Pour augmenter votre vitesse de navigation",
+                "name": "Matière recyclée",
+                "description": "Diminue les coûts de fabrication.",
+                "cost": 100,
+                "time": 10
+            },
+            {
+                "id": "2",
+                "name": "Système de consignation",
+                "description": "Rend le stockage plus efficace.",
                 "cost": 100,
                 "time": 10
             }

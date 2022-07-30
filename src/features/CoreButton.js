@@ -2,7 +2,7 @@ import React from 'react'
 import bottle from "../assets/rhum_bottle.png";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { incrementByAmount, increment } from "../features/counter/counterSlice";
+import { incrementRhumByAmount, incrementRhum } from "../features/counter/counterSlice";
 
 function CoreButton() {
     const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function CoreButton() {
       let interval = null;
   
       interval = setInterval(() => {
-        dispatch(increment());
+        dispatch(incrementRhum());
       }, 1000);
   
       return () => {
@@ -19,7 +19,7 @@ function CoreButton() {
       };
     });
   return (
-    <section>
+    <section className='Corebutton__wrapper'>
         <button
             className="rhum__button"
             onClick={() => {
@@ -31,7 +31,7 @@ function CoreButton() {
     </section>
   )
   function handleClick() {
-    dispatch(incrementByAmount(10));
+    dispatch(incrementRhumByAmount(10));
   }
 }
 
