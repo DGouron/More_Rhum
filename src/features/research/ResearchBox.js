@@ -1,16 +1,13 @@
 import React from 'react'
-import { data_research } from '../data/data_research';
-import ResearchTab from './ResearchTab';
+import ResearchNav from './ResearchNav';
+import ResearchView from './ResearchView';
 
 function ResearchBox() {
   return (
     <section className="research__container">
         <h2>Research</h2>
-        {data_research.map((researchBranch) => {
-            return (
-                <ResearchTab researchBranch={researchBranch}/>
-            )
-        })}
+        <ResearchView />
+        <ResearchNav />
     </section>
   )
 }
