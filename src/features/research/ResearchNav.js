@@ -5,7 +5,7 @@ import Tooltip from './Tooltip';
 
 function ResearchNav() {
   return (
-    <div className='Research__nav--container'>
+    <div className='research__nav--container'>
       <Tooltip />
         {data_research.map((researchBranch) => {
             return (

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { decrementRhumByAmount, incrementMoneyByAmount, modifyConvertTaux } from './counter/counterSlice';
+import { decrementRhumByAmount, incrementMoneyByAmount, modifyConvertTaux } from './slices/counterSlice';
 
 function ConvertButton() {
   const dispatch = useDispatch();

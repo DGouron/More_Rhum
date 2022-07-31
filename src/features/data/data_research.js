@@ -1,6 +1,7 @@
 export const data_research = 
 [
     {
+        "id": 0,
         "type": "Construction",
         "description": "Chaque recherche débloque des bonus ou de nouvelles construction. Cependant, plus le niveau de la recherche est élevé, plus son coût et son temps de recherche augmente",
         "research": [
@@ -17,10 +18,18 @@ export const data_research =
                 "description": "Stocker votre Rhum dans une petite piscine",
                 "cost": 100,
                 "time": 10
+            },
+            {
+                "id": "3",
+                "name": "Laquais",
+                "description": "Offrez vous les services des meilleurs laquais pour vos taches les plus ingrates.",
+                "cost": 10,
+                "time": 1
             }
         ]
     },
     {
+        "id": 1,
         "type": "Amélioration",
         "description": "De superbes améliorations pour vous améliorer",
         "research": [
@@ -41,6 +50,7 @@ export const data_research =
         ]
     },
     {
+        "id": 2,
         "type": "Laboratoire",
         "description": "Votre labo de recherche personnel",
         "research": [

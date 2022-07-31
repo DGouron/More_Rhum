@@ -1,11 +1,13 @@
 import React from 'react'
 import ConvertButton from './ConvertButton'
+import LevelView from './Level/LevelView'
 import LitterView from './LitterView'
 import MoneyView from './MoneyView'
 
 function Header() {
   return (
     <header>
+      <LevelView />
       <LitterView />
       <ConvertButton />
       <MoneyView />

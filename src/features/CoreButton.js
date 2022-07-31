@@ -2,7 +2,7 @@ import React from 'react'
 import bottle from "../assets/rhum_bottle.png";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { incrementRhumByAmount, incrementRhum } from "../features/counter/counterSlice";
+import { incrementRhumByAmount, incrementRhum } from "./slices/counterSlice";
 
 function CoreButton() {
     const dispatch = useDispatch();
