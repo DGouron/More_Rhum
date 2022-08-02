@@ -1,8 +1,8 @@
 import React from 'react'
-import bottle from "../assets/rhum_bottle.png";
+import coinIcone from "../assets/pirateCoin.png";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { incrementRhumByAmount, incrementRhum } from "./slices/counterSlice";
+import { incrementMoneyByAmount, incrementMoney } from "./slices/counterSlice";
 
 function CoreButton() {
     const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function CoreButton() {
       let interval = null;
   
       interval = setInterval(() => {
-        dispatch(incrementRhum());
+        dispatch(incrementMoney());
       }, 1000);
   
       return () => {
@@ -21,17 +21,17 @@ function CoreButton() {
   return (
     <section className='Corebutton__wrapper'>
         <button
-            className="rhum__button"
+            className="coin__button"
             onClick={() => {
             handleClick();
             }}
         >
-            <img src={bottle} className="bottle" alt="bottle" />
+            <img src={coinIcone} className="bottle" alt="bottle" />
         </button>
     </section>
   )
   function handleClick() {
-    dispatch(incrementRhumByAmount(10));
+    dispatch(incrementMoneyByAmount(10));
   }
 }
 

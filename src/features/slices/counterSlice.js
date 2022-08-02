@@ -26,6 +26,9 @@ export const counterSlice = createSlice({
     incrementMoneyByAmount: (state, action) => {
       state.money += action.payload;
     },
+    decrementMoneyByAmount: (state, action) => {
+      state.money -= action.payload;
+    },
     incrementRhum: (state) => {
       state.rhum += 1;
     },
@@ -43,6 +46,6 @@ export const counterSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { modifyConvertTaux } = counterSlice.actions;
-export const { incrementMoney, decrementMoney, incrementMoneyByAmount } = counterSlice.actions;
+export const { incrementMoney, decrementMoney, incrementMoneyByAmount, decrementMoneyByAmount } = counterSlice.actions;
 export const { incrementRhum, decrementRhum, incrementRhumByAmount, decrementRhumByAmount } = counterSlice.actions;
 export default counterSlice.reducer;

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { decrementRhumByAmount, incrementMoneyByAmount, modifyConvertTaux } from './slices/counterSlice';
+import { decrementMoneyByAmount, incrementRhumByAmount, modifyConvertTaux } from './slices/counterSlice';
 
 function ConvertButton() {
   const dispatch = useDispatch();
-  const rhumQuantity = useSelector((state) => state.counter.rhum);
+  const moneyQuantity = useSelector((state) => state.counter.money);
   let currentConvertTaux = useSelector((state) => state.counter.convertTaux);
 
   useEffect(() => {
@@ -20,14 +20,14 @@ function ConvertButton() {
   }, [currentConvertTaux, dispatch]);
 
   const HandleClick = () => {
-    let moneyQuantity = rhumQuantity * currentConvertTaux;
-    moneyQuantity = Math.round(moneyQuantity);
-    dispatch(decrementRhumByAmount(rhumQuantity));
-    dispatch(incrementMoneyByAmount(moneyQuantity));
+    let rhumQuantity = Math.round(moneyQuantity * currentConvertTaux);
+
+    dispatch(decrementMoneyByAmount(moneyQuantity));
+    dispatch(incrementRhumByAmount(rhumQuantity));
   }
   return (
     <div className='Conver__wrapper'>
-        <button onClick={() => HandleClick()}>Sell Rhum</button>
+        <button onClick={() => HandleClick()}>Buy Rhum</button>
         <h4>Taux = 1 : {currentConvertTaux}</h4>
     </div>
   )

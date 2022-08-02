@@ -33,12 +33,19 @@ header{
   }
 }
 .Moneyview__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1 1 30%;
   font-size: 35px;
   font-weight: 800;
   color: green;
   font-family: $font-sans-serif;
   text-align: center;
+}
+.Money__icone{
+  width: 56px;
+  height: 56px;
 }
 main{
   display: flex;
@@ -156,27 +163,34 @@ footer{
   justify-content: space-around;
 }
 
-@keyframes SpinBottle {
-  from {
+@keyframes SpinCoin {
+  0% {
     transform: rotate(0deg);
+    filter: drop-shadow(0 0 60px #60fb41);
   }
-  to {
+  50%{
     transform: rotate(180deg);
+    filter: drop-shadow(0 0 20px #60fb41);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: drop-shadow(0 0 60px #60fb41);
   }
 }
 .boat{
   width: 120px;
   height: 120px;
 }
-.rhum__button {
+.coin__button {
   background: transparent;
   border: none;
   border-radius: 50px;
   transition: 0.2s;
+  animation: SpinCoin 3s linear infinite;
 }
-.rhum__button:hover {
-  transform: scale(1.02);
+.coin__button:hover {
+  transform: scale(1.05);
 }
-.rhum__button:active {
-  animation: SpinBottle .6s ease-in-out infinite;
+.coin__button:active {
+  transform: scale(0.95);
 }
