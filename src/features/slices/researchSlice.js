@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   tabIdSelected: 0,
+  researchs: [],
 };
 
 export const researchSlice = createSlice({

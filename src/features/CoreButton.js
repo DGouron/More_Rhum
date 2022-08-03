@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { incrementMoneyByAmount, incrementMoney } from "./slices/counterSlice";
 
 function CoreButton() {
+    let clickCoinAmount = 1;
+    //To do -> incrémenter le montant via recherches
     const dispatch = useDispatch();
   
     useEffect(() => {
@@ -31,7 +33,7 @@ function CoreButton() {
     </section>
   )
   function handleClick() {
-    dispatch(incrementMoneyByAmount(10));
+    dispatch(incrementMoneyByAmount(clickCoinAmount));
   }
 }
 
