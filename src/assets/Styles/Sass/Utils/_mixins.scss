@@ -5,7 +5,7 @@
   text-shadow: $shadow-size solid $colour;
 }
 
-@mixin setup-wave($z-index: 1000, $opacity: 1, $bottom: 0, $animation: animateWave 3s linear infinite) {
+@mixin setup-wave($z-index: 5, $opacity: 1, $bottom: 0, $animation: animateWave 3s linear infinite) {
       z-index: $z-index;
       opacity: $opacity;
       bottom: $bottom;

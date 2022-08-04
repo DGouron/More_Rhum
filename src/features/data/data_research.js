@@ -11,20 +11,23 @@ export const data_research =
                 "description": "Stocker votre Rhum dans une bouteille",
                 "cost": 100,
                 "time": 10,
+                "captainLevelRequired": 1,
             },
             {
                 "id": "2",
                 "name": "Petite Piscine",
                 "description": "Stocker votre Rhum dans une petite piscine",
                 "cost": 100,
-                "time": 10
+                "time": 10,
+                "captainLevelRequired": 5,
             },
             {
                 "id": "3",
                 "name": "Laquais",
                 "description": "Offrez vous les services des meilleurs laquais pour vos taches les plus ingrates.",
                 "cost": 10,
-                "time": 1
+                "time": 1,
+                "captainLevelRequired": 7,
             }
         ]
     },

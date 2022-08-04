@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { decrementMoneyByAmount, incrementRhumByAmount, modifyConvertTaux } from './slices/counterSlice';
+import coin from '../assets/pirateCoin.png';
+import bottleOfRhum from '../assets/rhum_bottle.png';
 
 function ConvertButton() {
   const dispatch = useDispatch();
@@ -26,9 +28,14 @@ function ConvertButton() {
     dispatch(incrementRhumByAmount(rhumQuantity));
   }
   return (
-    <div className='Conver__wrapper'>
-        <button onClick={() => HandleClick()}>Buy Rhum</button>
-        <h4>Taux = 1 : {currentConvertTaux}</h4>
+    <div className='convert__button--wrapper'>
+        <button onClick={() => HandleClick()}>
+          Acheter Rhum
+        </button>
+        <p>
+          Prix : {currentConvertTaux}<img className="Money__icone" src={bottleOfRhum} alt="Icone bouteille de Rhum monney"/> pour 1<img src={coin} alt="Coin icone for convert button" className="Money__icone"/>
+        </p>
+    
     </div>
   )
 }

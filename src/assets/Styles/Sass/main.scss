@@ -12,25 +12,121 @@ body{
   width: 100%;
   font-size: 16px;
   color: $color-light;
-  background-color: $color-dark;
+  background-color: grey;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100vh;
+  margin-left: 50px;
+  animation: openBoard 2s ease-in-out forwards;
+}
+@keyframes openBoard {
+  0% {
+    margin-right: 600px;
+  }
+  100% {
+    margin-right: 50px;
+  }
 }
 header{
-  width: 100%;
-  height: 100px;
-  background-color: $color-dark;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 0 20px;
+  width: 100%;
+  height: 150px;
+  background-color: $color-light;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  z-index: 10;
 
-  .Conver__wrapper{
+  .convert__button--wrapper{
     flex: 1 1 30%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+
+    button{
+      flex: 1 1 80%;
+      width: 100%;
+      height: 100%;
+      background: #FFF;
+      text-align: center;
+      font-size: 16px;
+      color: #262626;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    p{
+      flex: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 16px;
+      color: #262626;
+    }
   }
+  h1{
+    font-size: 24px;
+    color: #262626;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+}
+.header__levelView--wrapper{
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: black;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  .header__levelView--xpview{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .Experience__icone{
+      flex: 1 1 20%;
+      width: 96px;
+      height: 96px;
+    }
+
+    .header__progressbar--wrapper{
+      flex: 1 1 80%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 1em;
+      margin: 20px;
+      background-color: gray;
+      border-radius: 1.5em;
+    }
+    .header__progressbar--percent{
+      width: calc(var(--xp-percent, 0) * 1%);
+      max-width: 100%;
+      height: 20px;
+    }
+  }
+}
+.progressbar {
+  background-color: rgb(52, 90, 214);
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
 }
 .Moneyview__wrapper{
   display: flex;
@@ -50,7 +146,8 @@ header{
 main{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  background: $color-light;
   width: 100%;
   height: 100%;
 }
@@ -58,26 +155,40 @@ main{
   flex: 50;
 }
 .research__container{
-  flex: 40%;
+  flex: 1 1 40%;
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-wrap: wrap;
   background-color: transparent;
+  margin-top: 6px;
 
   h2{
     flex: 100%;
   }
 }
+.research__wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(43, 43, 36);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border: 1px solid grey;
+}
 .research__view--container{
-  flex: 0 1 70%;
   width: 100%;
   min-height: 100%;
+  max-height: 450px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: rgb(27, 221, 189);
+  background-color: rgb(58, 100, 93);
   overflow-y: scroll;
+  z-index: 9;
 }
 .research__nav--container
 {
@@ -98,7 +209,7 @@ main{
   }
 }
 footer{
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   background: $wave-color;
@@ -125,16 +236,16 @@ footer{
     background-size: 1000px 100px;
 
     &#wave1{
-      @include setup-wave(1000, 1, 0, animateWave 4s linear infinite);
+      @include setup-wave(5, 1, 0, animateWave 4s linear infinite);
     }
     &#wave2{
-      @include setup-wave(999, .5, 0, animateWave_02 4s linear infinite);
+      @include setup-wave(4, .5, 0, animateWave_02 4s linear infinite);
     }
     &#wave3{
-      @include setup-wave(1000, .2, 15px, animateWave 3s linear infinite);
+      @include setup-wave(5, .2, 15px, animateWave 3s linear infinite);
     }
     &#wave4{
-      @include setup-wave(999, .7, 20px, animateWave_02 3s linear infinite);
+      @include setup-wave(4, .7, 20px, animateWave_02 3s linear infinite);
     }
   }
 }
@@ -165,15 +276,23 @@ footer{
 
 @keyframes SpinCoin {
   0% {
-    transform: rotate(0deg);
+    transform: translate(0) scale(1)  rotate(0deg);
     filter: drop-shadow(0 0 60px #60fb41);
   }
-  50%{
-    transform: rotate(180deg);
+  20%{
+    transform:  translate(360px, 50%) scale(1.2)  rotate(360deg);
     filter: drop-shadow(0 0 20px #60fb41);
   }
+  40% {
+    transform: translate(520px, 0%)  scale(1)  rotate(480deg);
+    filter: drop-shadow(0 0 60px #60fb41);
+  }
+  60% {
+    transform: translate(360px, -50%)  scale(1)  rotate(720deg);
+    filter: drop-shadow(0 0 60px #60fb41);
+  }
   100% {
-    transform: rotate(360deg);
+    transform: translate(0)  scale(1)  rotate(1024deg);
     filter: drop-shadow(0 0 60px #60fb41);
   }
 }
@@ -186,7 +305,8 @@ footer{
   border: none;
   border-radius: 50px;
   transition: 0.2s;
-  animation: SpinCoin 3s linear infinite;
+  animation: SpinCoin $coinAnimationDuration linear infinite;
+  cursor: pointer;
 }
 .coin__button:hover {
   transform: scale(1.05);
