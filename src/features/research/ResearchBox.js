@@ -6,7 +6,6 @@ function ResearchBox() {
 
   return (
     <section className="research__container">
-        <h2>Research</h2>
         <ResearchView />
         <ResearchNav />
     </section>
