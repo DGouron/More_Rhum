@@ -29,9 +29,11 @@ function ConvertButton() {
   }
   return (
     <div className='convert__button--wrapper'>
-        <button onClick={() => HandleClick()}>
-          Acheter Rhum
-        </button>
+        <div className='convert__button--container'>
+          <a href='#convert' onClick={() => HandleClick()}>
+          <span>Acheter Rhum</span>
+          </a>
+        </div>
         <p>
           Prix : {currentConvertTaux}<img className="Money__icone" src={bottleOfRhum} alt="Icone bouteille de Rhum monney"/> pour 1<img src={coin} alt="Coin icone for convert button" className="Money__icone"/>
         </p>

@@ -1,0 +1,85 @@
+.convert__button--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a{
+        position: relative;
+        display: inline-block;
+        padding: 15px 30px;
+        border: 2px solid #0f0;
+        border-radius: 20px;
+        margin: 40px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 2px;
+        color: black;
+        transition: 0s;
+    }
+    a:hover{
+        transition-delay: 1.5s;
+        color: #fff;
+        box-shadow: 0 0 10px $color-secondary,
+        0 0 20px $color-secondary,
+        0 0 40px $color-secondary,
+        0 0 80px $color-secondary,
+        0 0 160px $color-secondary;
+    }
+    a:nth-child(2){
+        filter: hue-rotate(80deg);
+    }
+    a::before{
+        content: '';
+        position: absolute;
+        border-radius: 20px;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 2px;
+        background: #0f0;
+        box-shadow: 5px -8px 0 #0f0,
+                    5px 8px 0 #0f0;
+        transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s, background 0.5s;
+        transition-delay: 1s, 0.5s, 0s, 0s;
+    }
+    a:hover::before{
+        width: 60%;
+        height: 100%;
+        left: -2px;
+        background: $color-secondary;
+        box-shadow: 5px 0 0 #0f0,
+                    5px 0 0 #0f0;
+        transition-delay: 0s, 0.5s, 1s, 1s, 1s;
+    }
+    a::after{
+        content: '';
+        position: absolute;
+        border-radius: 20px;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 2px;
+        background: $color-secondary;
+        box-shadow: -5px -8px 0 $color-secondary,
+                    -5px 8px 0 $color-secondary;
+        transition: width 0.5s, right 0.5s, height 0.5s, box-shadow 0.5s;
+        transition-delay: 1s, 0.5s, 0s, 0s;
+    }
+    a:hover::after{
+        width: 60%;
+        height: 100%;
+        right: -2px;
+        box-shadow: -5px 0 0 $color-secondary,
+                    -5px 0 0 $color-secondary;
+        transition-delay: 0s, 0.5s, 1s, 1s;
+    }
+    a span{
+        position: relative;
+        z-index: 100;
+    }
+}

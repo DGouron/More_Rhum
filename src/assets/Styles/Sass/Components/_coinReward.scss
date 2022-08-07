@@ -1,0 +1,35 @@
+.reward__coin{
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 50%;
+left: 50%;
+width: 120px;
+height: 60px;
+animation: reward_coin--animation 1s ease-in-out;
+color: rgb(52, 90, 214);
+text-shadow:  0 0 20px rgb(36, 40, 53);
+font-size: 2em;
+font-weight: bold;
+z-index: 9999999;
+opacity: 0;
+
+    img{
+        width: 76px;
+        height: 76px;
+    }  
+}
+@keyframes reward_coin--animation{
+    0%{
+      opacity: 1;
+    }
+    70%{
+      opacity: .8;
+    }
+    100%{
+      top: 5%;
+      left: 25%;
+      opacity: 0;
+    }
+  }

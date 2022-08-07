@@ -1,0 +1,9 @@
+.research__progress{
+    flex: 1 1 100%;
+    width: calc(1% * var(--research--progress-percent));
+    height: 28px;
+    min-height: 28px;
+    background: $color-light;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
