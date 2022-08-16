@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   convertTaux: 1,
-  rhum: 2000000,
+  rhum: 200000,
   money: 0,
 };
 

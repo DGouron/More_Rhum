@@ -2,9 +2,11 @@ import React from 'react'
 import { data_research } from '../data/data_research';
 import { useSelector } from 'react-redux';
 import Research from './Research';
+import useResearchTimer from '../../hooks/useResearchTimer';
 
 function ResearchView() {
   let tabIdSelected = useSelector((state) => state.research.tabIdSelected);;
+  useResearchTimer();
 
   return (
     <div className='research__view--container'>

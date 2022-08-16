@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  captainLevel: 111,
+  captainLevel: 100,
   experience: 0,
   experienceRequired: 100,
 };

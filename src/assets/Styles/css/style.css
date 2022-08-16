@@ -111,11 +111,14 @@
   }
 }
 .research__progress {
-  flex: 1 1 100%;
+  flex: 0 1 90%;
+  margin-left: 10px;
+  margin-right: 10px;
   width: calc(1% * var(--research--progress-percent));
-  height: 28px;
-  min-height: 28px;
-  background: #fff;
+  height: 10px;
+  min-height: 10px;
+  border-radius: 20px;
+  background: #fdcea7;
   justify-self: flex-start;
   align-self: flex-start;
 }

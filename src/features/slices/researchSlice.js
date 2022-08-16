@@ -13,7 +13,6 @@ export const researchSlice = createSlice({
       state.tabIdSelected = action.payload;
     },
     addResearch: (state, action) => { 
-      console.log(action.payload);
       const index = state.researchs.findIndex((targetResearch) => targetResearch.id === action.payload.id);
 
       if(index !== -1) {
