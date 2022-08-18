@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    rewards: [],
+    refreshAutoRewards: false,
     refreshTimers: false,
     timers: [],
 };
@@ -39,13 +41,32 @@ export const timersSlice = createSlice({
           if(timers[i].timer < timers[i].timerReached){
             timers[i].timer += 1000;
           }else{
+            let newReward = [...state.rewards.filter((reward) => reward.id !== timers[i].id)];
+            newReward.push({
+              id: timers[i].id, 
+              type: "Coin",
+              alreadyReward: false,
+            });
+            state.rewards = newReward;
+
+            state.refreshAutoRewards = true;
             timers[i].timer = 0;
           }
         }
         state.timers = timers;
       }
+    },
+    setRefreshAutoRewards: (state, action) => {
+        state.refreshAutoRewards = action.payload;
+    },
+    setAlreadyReward: (state, action) => {
+      const index = state.rewards.findIndex((targetReward) => targetReward.id === action.payload);
+      if(index !== -1){
+        let upgradedRewards = [...state.rewards];
+        upgradedRewards[index].alreadyReward = true;
+        state.rewards = upgradedRewards;
+      }
     }
-
   },
 });
 
@@ -57,5 +78,5 @@ function makeResearchTimer(research){
   };
 }
 // Action creators are generated for each case reducer function
-export const { setRefreshTimers, setClockTick, updateTimersList, throttleClockTick } = timersSlice.actions;
+export const { setRefreshTimers, setClockTick, updateTimersList, throttleClockTick, setRefreshAutoRewards, setAlreadyReward } = timersSlice.actions;
 export default timersSlice.reducer;

@@ -24,7 +24,7 @@ function CoreButton() {
     let interval = null;
 
     interval = setInterval(() => {
-      dispatch(incrementMoney());
+      //dispatch(incrementMoney());
     }, 1000);
 
     return () => {
