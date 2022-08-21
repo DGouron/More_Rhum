@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import coinIcone from "../assets/pirateCoin.png";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { incrementMoneyByAmount, incrementMoney } from "./slices/counterSlice";
+import { incrementMoneyByAmount } from "./slices/counterSlice";
 import CoinReward from './rewards/CoinReward';
 
 function CoreButton() {
   let clickCoinAmount = 1;
-  //To do -> incrémenter le montant via recherches
+ 
   const dispatch = useDispatch();
   const [reward, setReward] = useState([]);
   const maxRewardsLength = 30;
@@ -20,17 +20,6 @@ function CoreButton() {
   }
   }, [reward]);
 
-  useEffect(() => {
-    let interval = null;
-
-    interval = setInterval(() => {
-      //dispatch(incrementMoney());
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  });
   return (
     <section className='Corebutton__wrapper'>
         <button

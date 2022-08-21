@@ -112,15 +112,11 @@
 }
 .research__progress {
   flex: 0 1 90%;
-  margin-left: 10px;
-  margin-right: 10px;
   width: calc(1% * var(--research--progress-percent));
-  height: 10px;
   min-height: 10px;
   border-radius: 20px;
   background: #fdcea7;
-  justify-self: flex-start;
-  align-self: flex-start;
+  align-self: stretch;
 }
 
 .research__container {
@@ -138,33 +134,35 @@
 }
 
 .research__wrapper {
+  flex: 1 1 100%;
   display: flex;
+  gap: 15px;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 95%;
-  height: 100%;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
   background-color: rgb(43, 43, 36);
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border: 1px solid grey;
+  font-size: 0.8rem;
 }
 .research__wrapper p {
-  width: 80%;
-  min-width: 80%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .research__view--container {
   max-height: 400px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   background-color: rgb(58, 100, 93);
   overflow-y: scroll;
   overflow-x: clip;
   z-index: 9;
-  padding: 20px;
+  padding: 10px;
   padding-left: 5px;
   padding-right: 30px;
   border-radius: 20px;
@@ -201,6 +199,53 @@
 }
 .research__tab button:hover {
   padding: 10px 15px 10px 25px;
+}
+
+.research__informations--row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  gap: 10px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.research__informations--row p {
+  display: flex;
+  align-items: center;
+}
+
+.research__monney--icone {
+  width: 32px;
+  height: 32px;
+}
+
+.research__upgrade--button {
+  flex: 0 1 30%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(27, 221, 189);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border: 1px solid grey;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+  font-family: "Charis SIL", serif;
+  color: #262626;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.research__upgrade--button:hover {
+  padding: 10px 15px 10px 25px;
+  flex: 0 1 50%;
+  background-color: rgb(27, 221, 130);
 }
 
 html,
@@ -377,11 +422,11 @@ footer {
   align-items: center;
 }
 footer p {
-  color: #fff;
+  color: #333;
   text-align: center;
   margin-top: 15px;
   margin-bottom: 10px;
-  font-size: 1.1em;
+  font-size: 0.75rem;
 }
 footer .wave {
   position: absolute;

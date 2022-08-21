@@ -9,7 +9,7 @@ function Footer() {
             <div className="wave" id="wave3"></div>
             <div className="wave" id="wave4"></div>
         </div>
-        <p>©2022 - Damien Gouron | All Rights Reserved</p>
+        <p>© 2022 - Damien Gouron | All Rights Reserved | Version 0.0.1 Bêta | <a href="https://dgouron.fr" target="_blank" rel="noreferrer">Contact</a></p>
     </footer>
   )
 }

@@ -196,6 +196,7 @@ export const data_research =
                 "captainLevelRequired": 7,
                 "ctaMessage": "Améliorer",
                 "level": 0,
+                "effectMessage": "Gain par Click = 1.5 * Click efficace",
             }
         ]
     },
@@ -214,6 +215,7 @@ export const data_research =
                 "captainLevelRequired": 7,
                 "ctaMessage": "Rechercher",
                 "level": 0,
+                "effectMessage": "Coût diminué de 0.01 * Matière recyclée",
             },
             {
                 "id": "lab-2",

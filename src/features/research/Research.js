@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import bottle from '../../assets/rhum_bottle.png';
+import coinLogo from "../../assets/pirateCoin.png";
 import { useSelector, useDispatch } from 'react-redux';
 import { increaseExperienceByAmount } from '../slices/userStatsSlice';
 import { decrementRhumByAmount } from '../slices/counterSlice';
@@ -20,6 +21,7 @@ function Research(props) {
   const currentResearchData = FindResearch(props.research.id, researchs);
   const researchCost = currentResearchData ? currentResearchData.cost : props.research.cost;
   const researchLevel = currentResearchData ? currentResearchData.level : 0;
+  const researchExperienceReward = currentResearchData ? currentResearchData.experienceReward : props.research.experienceReward;
 
   const [reward, setReward] = useState([]);
   const maxRewardsLength = 30;
@@ -38,15 +40,21 @@ function Research(props) {
     <div className='research__wrapper'>
         <ResearchProgressbar percent={currentTimer !== undefined ? 100 * currentTimer.timer / currentTimer.timerReached : 0}/>
         <h3>{props.research.name} | Niv. {researchLevel}</h3>
-        {props.research.goldAutoReward > 0 ? 
-        <p>{researchGoldReward} gold / {Math.round(props.research.time / 1000)} seconds</p>
-        : null}
+        <div className='research__informations--row'>
+          {props.research.goldAutoReward > 0 && props.research.level >= 1 
+          ? <p>{researchGoldReward}<img src={coinLogo} alt="Icone pièce d'or" className="research__monney--icone"/> / {Math.round(props.research.time / 1000)} seconds</p>
+          : <p>{props.research.effectMessage}</p>}
+          <p>Coût : {useNormalizeNumber(researchCost)}<img className="research__monney--icone" src={bottle} alt="Icone rhum bottle monney"/></p>
+        </div>
         <p>{props.research.description}</p>
-        <p>Coût : {useNormalizeNumber(researchCost)}<img className="Money__icone" src={bottle} alt="Icone rhum bottle monney"/></p>
-        <p>Capitaine Niv.{props.research.captainLevelRequired}</p>
-        {currentCaptainLevel >= props.research.captainLevelRequired && currentRhum >= researchCost ?
-          <button className='Upgrade__button' onClick={() => HandleClick()}>{props.research.ctaMessage}</button>
-          : null}
+        <div className='research__informations--row'>
+          {currentCaptainLevel >= props.research.captainLevelRequired 
+          ? currentRhum >= researchCost 
+            ? <button className='research__upgrade--button' onClick={() => HandleClick()}>{props.research.ctaMessage}</button>
+            : <p>Pas assez de Rhum</p> 
+          : <p>Capitaine Niv.{props.research.captainLevelRequired} requis</p>}
+          <p><i>Gain d'XP : {researchExperienceReward}</i></p>
+        </div>
         {reward.map((reward) => {return <ExperienceReward rewardAmount={reward.quantity} />})}
     </div>
   )
