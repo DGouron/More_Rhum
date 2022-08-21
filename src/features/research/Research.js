@@ -14,7 +14,7 @@ function Research(props) {
   const dispatch = useDispatch();
   const currentTimer = useSelector((state) => state.timers.timers.find((timer) => timer.id === props.research.id));
   const currentCaptainLevel = useSelector((state) => state.userStats.captainLevel);
-  console.log(currentCaptainLevel);
+
   const currentRhum = useSelector((state) => state.counter.rhum);
 
   const researchs = useSelector((state) => state.research.researchs);
@@ -53,7 +53,7 @@ function Research(props) {
             ? <button className='research__upgrade--button' onClick={() => HandleClick()}>{props.research.ctaMessage}</button>
             : <p>Pas assez de Rhum</p> 
           : <p>Capitaine Niv.{props.research.captainLevelRequired} requis</p>}
-          <p><i>Gain d'XP : {researchExperienceReward}</i></p>
+          <p><i>Gain d'XP : {useNormalizeNumber(researchExperienceReward)}</i></p>
         </div>
         {reward.map((reward) => {return <ExperienceReward rewardAmount={reward.quantity} />})}
     </div>
