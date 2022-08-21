@@ -30,7 +30,7 @@ useEffect(() => {
       dispatch(setAlreadyReward(reward.id, true));
       if(reward.alreadyReward === false){
         const research = researchs.find((research) => research.id === reward.id);
-        let goldRewardQuantity = Math.round(research.goldAutoReward * research.level * 1.6);
+        let goldRewardQuantity = Math.round(research.goldAutoReward * research.level * 2.1);
 
         let tempReward ={
           id: reward.id,

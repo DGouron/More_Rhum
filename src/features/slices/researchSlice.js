@@ -27,7 +27,7 @@ export const researchSlice = createSlice({
 
 function UpgradeResearch(researchs, indexToUpgrade){
   let upgradedResearch = [...researchs];
-    upgradedResearch[indexToUpgrade].cost = Math.round(upgradedResearch[indexToUpgrade].cost * 1.1);
+    upgradedResearch[indexToUpgrade].cost = Math.round(upgradedResearch[indexToUpgrade].cost * 1.05);
     upgradedResearch[indexToUpgrade].level += 1;
   return upgradedResearch;
 }
