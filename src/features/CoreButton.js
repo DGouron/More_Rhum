@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import coinIcone from "../assets/pirateCoin.png";
+import coinIcone from "../assets/pirateCoin.webp";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { incrementMoneyByAmount } from "./slices/counterSlice";

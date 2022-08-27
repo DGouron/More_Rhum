@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import bottleOfRhum from '../assets/rhum_bottle.png';
+import bottleOfRhum from '../assets/rhum_bottle.webp';
 import useNormalizeNumber from '../hooks/useNormalizeNumber';
 
 function RhumView() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import coin from '../assets/pirateCoin.png';
+import coin from '../assets/pirateCoin.webp';
 import useNormalizeNumber from '../hooks/useNormalizeNumber';
 
 function MoneyView() {

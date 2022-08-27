@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+    .coin__button{
+        animation: IdleCoin $coinAnimationDuration linear infinite;
+    }
+
+    @keyframes IdleCoin{
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+
+      .research__container{
+        flex: 100%;
+        flex-direction: column-reverse;
+        padding-left: 10px;
+      }
+
+    main{
+        flex-wrap: wrap;
+    }
+
+    header{
+        flex-wrap: wrap;
+    }
+}

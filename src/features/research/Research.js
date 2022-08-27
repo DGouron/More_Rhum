@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import bottle from '../../assets/rhum_bottle.png';
-import coinLogo from "../../assets/pirateCoin.png";
+import bottle from '../../assets/rhum_bottle.webp';
+import coinLogo from "../../assets/pirateCoin.webp";
 import { useSelector, useDispatch } from 'react-redux';
 import { increaseExperienceByAmount } from '../slices/userStatsSlice';
 import { decrementRhumByAmount } from '../slices/counterSlice';

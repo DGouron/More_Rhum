@@ -1,5 +1,5 @@
 import React from 'react'
-import xpLogo from "../../assets/xplogo.png";
+import xpLogo from "../../assets/xplogo.webp";
 
 function ExperienceReward(props) {
   return (

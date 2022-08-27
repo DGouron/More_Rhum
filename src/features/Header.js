@@ -8,10 +8,12 @@ function Header() {
   return (
     <header>
       <LevelView />
-      <MoneyView />
+      <div>
+        <MoneyView />
+        <LitterView />
+      </div>
       <ConvertButton />
-      <LitterView />
-      <h1>More Rhum - Take all the rhum of the world for your pirate team</h1>
+      <h1>More Rhum - Construisez la plus grande équipe de pirate</h1>
     </header>
   )
 }

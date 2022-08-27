@@ -248,6 +248,39 @@
   background-color: rgb(27, 221, 130);
 }
 
+@media screen and (max-width: 768px) {
+  .coin__button {
+    animation: IdleCoin 3s linear infinite;
+  }
+  @keyframes IdleCoin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .research__container {
+    flex: 100%;
+    flex-direction: column-reverse;
+    padding-left: 10px;
+  }
+  main {
+    flex-wrap: wrap;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .coin__button {
+    animation: SpinCoin 3s linear infinite;
+  }
+}
+* {
+  font-family: "Raleway", sans-serif;
+}
+
 html,
 body,
 .app {
@@ -323,11 +356,12 @@ header .convert__button--wrapper p {
   color: #262626;
 }
 header h1 {
-  font-size: 20px;
+  font-size: 1vw;
   color: #262626;
-  letter-spacing: 1px;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
-  text-overflow: ellipsis;
+  font-family: "Charis SIL", serif;
+  width: 100%;
 }
 
 .header__levelView--wrapper {
@@ -535,7 +569,6 @@ footer .wave#wave4 {
   border: none;
   border-radius: 50px;
   transition: 0.2s;
-  animation: SpinCoin 3s linear infinite;
   cursor: pointer;
 }
 

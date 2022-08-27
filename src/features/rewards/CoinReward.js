@@ -1,5 +1,5 @@
 import React from 'react'
-import coinLogo from "../../assets/pirateCoin.png";
+import coinLogo from "../../assets/pirateCoin.webp";
 import useNormalizeNumber from '../../hooks/useNormalizeNumber';
 
 function CoinReward(props) {

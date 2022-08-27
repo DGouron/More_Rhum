@@ -1,5 +1,5 @@
 import React from 'react'
-import xpLogo from "../../assets/xplogo.png";
+import xpLogo from "../../assets/xplogo.webp";
 import { useSelector } from 'react-redux';
 import useNormalizeNumber from '../../hooks/useNormalizeNumber';
 

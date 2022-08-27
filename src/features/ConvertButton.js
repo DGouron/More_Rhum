@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { decrementMoneyByAmount, incrementRhumByAmount, modifyConvertTaux } from './slices/counterSlice';
-import coin from '../assets/pirateCoin.png';
-import bottleOfRhum from '../assets/rhum_bottle.png';
+import coin from '../assets/pirateCoin.webp';
+import bottleOfRhum from '../assets/rhum_bottle.webp';
 
 function ConvertButton() {
   const dispatch = useDispatch();

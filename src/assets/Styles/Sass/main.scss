@@ -3,6 +3,11 @@
 @import "./Components/convertButton";
 @import "./Components/coinReward";
 @import "./Components/research";
+@import "./queries/mobile";
+@import "./queries/desktop";
+*{
+  font-family: $font-sans-serif;
+}
 html,
 body,
 .app {
@@ -76,11 +81,12 @@ header{
     }
   }
   h1{
-    font-size: 20px;
+    font-size: 1vw;
     color: #262626;
-    letter-spacing: 1px;
+    letter-spacing: .2rem;
     text-transform: uppercase;
-    text-overflow: ellipsis;
+    font-family: $font-serif;
+    width: 100%;
   }
 }
 .header__levelView--wrapper{
@@ -240,7 +246,7 @@ footer{
   display: flex;
   justify-content: space-around;
 }
-
+  
 @keyframes SpinCoin {
   0% {
     transform: translate(0) scale(1)  rotate(0deg);
@@ -272,7 +278,6 @@ footer{
   border: none;
   border-radius: 50px;
   transition: 0.2s;
-  animation: SpinCoin $coinAnimationDuration linear infinite;
   cursor: pointer;
 }
 .coin__button:hover {
