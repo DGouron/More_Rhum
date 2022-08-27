@@ -1,24 +1,38 @@
 @media screen and (max-width: 768px) {
     body{
         overflow-y: scroll;
+        overflow-x: hidden;
     }
     .coin__button{
         animation: IdleCoin $coinAnimationDuration linear infinite;
     }
-
+    .Corebutton__wrapper{
+        display: flex;
+        justify-content: center;
+    }
     @keyframes IdleCoin{
         0%{
-          transform: rotate(0deg);
+          transform: translateX(-100px) rotate(0deg);
+        }
+        25%{
+          transform: translateX(0px) rotate(180deg);
+        }
+        50%{
+            transform: translateX(100px) rotate(360deg);
+        }
+        75%{
+            transform: translateX(0px) rotate(180deg);
         }
         100%{
-          transform: rotate(360deg);
+            transform: translateX(-100px) rotate(0deg);
         }
       }
 
       .research__container{
         flex: 100%;
         flex-direction: column-reverse;
-        padding-left: 10px;
+        margin: 10px;
+        margin-bottom: 100px;
       }
 
     main{
@@ -36,6 +50,7 @@
     }
     .Money__row{
         flex: 100;
+        display: flex;
     }
     header .convert__button--wrapper{
         margin: 0;
@@ -43,5 +58,8 @@
     }
     header h1{
         display: none;
+    }
+    .Moneyview__wrapper{
+        font-size: 1.5rem;
     }
 }
