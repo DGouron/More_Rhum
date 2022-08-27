@@ -25,7 +25,6 @@ useEffect(() => {
 
   if(refreshAutoRewards === true){
     let currentRewards = [...reward];
-    console.log(rewards);
     rewards.forEach((reward) => { 
       dispatch(setAlreadyReward(reward.id, true));
       if(reward.alreadyReward === false){
@@ -62,11 +61,11 @@ useEffect(() => {
     <div className='research__view--container'>
       {tabIdSelected !== -1 && data_research !== undefined ? data_research[tabIdSelected].research.map((research) => {
         return (
-          <Research research={research}/>
+          <Research research={research} key={research.id} />
         )})
         : null
       }
-      {reward.map((reward) => { return <CoinReward rewardAmount={reward.quantity} />})}
+      {reward.map((reward) => { return <CoinReward rewardAmount={reward.quantity} key={reward}/>})}
     </div>
   )
 }

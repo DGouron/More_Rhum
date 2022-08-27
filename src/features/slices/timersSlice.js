@@ -19,11 +19,9 @@ export const timersSlice = createSlice({
     },
     updateTimersList: (state, action) => {
       if(action.payload.length > 0){
-        console.log(action.payload);
 
         for(let i = 0; i < action.payload.length; i++){
           let researchItem = action.payload[i];
-          console.log(researchItem);
           if(Object.keys(researchItem).findIndex((key) => key === "goldAutoReward") !== -1 
                                                     && researchItem.goldAutoReward !== 0){ 
               let index = state.timers.findIndex((targetTimer) => targetTimer.id === researchItem.id);

@@ -7,7 +7,7 @@ function ResearchNav() {
     <div className='research__nav--container'>
         {data_research.map((researchBranch) => {
             return (
-                <ResearchTab researchBranch={researchBranch}/>
+                <ResearchTab researchBranch={researchBranch} key={researchBranch.id} />
             )
         })}
     </div>

@@ -12,7 +12,7 @@ function LevelView() {
       <p>Capitaine niv. : {captainLevel}</p>
       <div className='header__levelView--xpview'>
         <img src={xpLogo} alt="Icone experience" className="Experience__icone"/>
-        <div class="header__progressbar--container">
+        <div className="header__progressbar--container">
             <div className="header__progressbar--wrapper">
                 <div title="experience percent view" className="progressbar header__progressbar--percent" style={{ "--xp-percent": 100 * currentExperience / experienceRequired}}>
                 </div>
