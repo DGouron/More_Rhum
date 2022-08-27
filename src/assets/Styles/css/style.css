@@ -298,6 +298,7 @@
   .Money__row {
     flex: 100;
     display: flex;
+    flex-wrap: wrap;
     margin-left: 0;
   }
   header .convert__button--wrapper {
