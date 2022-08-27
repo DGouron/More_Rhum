@@ -298,6 +298,7 @@
   .Money__row {
     flex: 100;
     display: flex;
+    margin-left: 0;
   }
   header .convert__button--wrapper {
     margin: 0;
@@ -327,6 +328,9 @@
   }
   .Moneyview__wrapper {
     font-size: 1rem;
+  }
+  .Money__row {
+    margin-left: 70px;
   }
 }
 * {
