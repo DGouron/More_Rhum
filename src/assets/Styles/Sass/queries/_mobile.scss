@@ -1,4 +1,7 @@
 @media screen and (max-width: 768px) {
+    body{
+        overflow-y: scroll;
+    }
     .coin__button{
         animation: IdleCoin $coinAnimationDuration linear infinite;
     }
@@ -24,5 +27,21 @@
 
     header{
         flex-wrap: wrap;
+        height: auto;
+    }
+    .header__levelView--wrapper{
+        flex: 20;
+        height: auto;
+        font-size: 14px;
+    }
+    .Money__row{
+        flex: 100;
+    }
+    header .convert__button--wrapper{
+        margin: 0;
+        padding: 0;
+    }
+    header h1{
+        display: none;
     }
 }

@@ -8,7 +8,7 @@ function Header() {
   return (
     <header>
       <LevelView />
-      <div>
+      <div className='Money__row'>
         <MoneyView />
         <LitterView />
       </div>
