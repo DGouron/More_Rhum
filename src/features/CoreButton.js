@@ -9,7 +9,6 @@ import useBindToResearch from '../hooks/useBindToResearch';
 function CoreButton() {
   let clickEfficace = useBindToResearch("am-2");
   let clickCoinAmount = clickEfficace !== undefined ?  Math.round(1.5 * clickEfficace.level) : 1;
-  console.log(clickEfficace);
   const dispatch = useDispatch();
   const [reward, setReward] = useState([]);
   const maxRewardsLength = 30;
