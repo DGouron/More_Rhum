@@ -1,67 +1,71 @@
 @media screen and (max-width: 768px) {
-    body{
-        overflow-y: scroll;
-        overflow-x: hidden;
+  #root {
+    margin-left: 0;
+    width: 100vw;
+  }
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .coin__button {
+    animation: IdleCoin $coinAnimationDuration linear infinite;
+  }
+  .Corebutton__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  @keyframes IdleCoin {
+    0% {
+      transform: translateX(-100px) rotate(0deg);
     }
-    .coin__button{
-        animation: IdleCoin $coinAnimationDuration linear infinite;
+    25% {
+      transform: translateX(0px) rotate(180deg);
     }
-    .Corebutton__wrapper{
-        display: flex;
-        justify-content: center;
+    50% {
+      transform: translateX(100px) rotate(360deg);
     }
-    @keyframes IdleCoin{
-        0%{
-          transform: translateX(-100px) rotate(0deg);
-        }
-        25%{
-          transform: translateX(0px) rotate(180deg);
-        }
-        50%{
-            transform: translateX(100px) rotate(360deg);
-        }
-        75%{
-            transform: translateX(0px) rotate(180deg);
-        }
-        100%{
-            transform: translateX(-100px) rotate(0deg);
-        }
-      }
+    75% {
+      transform: translateX(0px) rotate(180deg);
+    }
+    100% {
+      transform: translateX(-100px) rotate(0deg);
+    }
+  }
 
-      .research__container{
-        flex: 100%;
-        flex-direction: column-reverse;
-        margin: 10px;
-        margin-bottom: 100px;
-      }
+  .research__container {
+    flex: 100%;
+    flex-direction: column-reverse;
+    margin: 10px;
+    margin-bottom: 100px;
+  }
 
-    main{
-        flex-wrap: wrap;
-    }
+  main {
+    flex-wrap: wrap;
+  }
 
-    header{
-        flex-wrap: wrap;
-        height: auto;
-    }
-    .header__levelView--wrapper{
-        flex: 20;
-        height: auto;
-        font-size: 14px;
-    }
-    .Money__row{
-        flex: 100;
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 0;
-    }
-    header .convert__button--wrapper{
-        margin: 0;
-        padding: 0;
-    }
-    header h1{
-        display: none;
-    }
-    .Moneyview__wrapper{
-        font-size: 1.5rem;
-    }
+  header {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .header__levelView--wrapper {
+    flex: 20;
+    height: auto;
+    font-size: 14px;
+  }
+  .Money__row {
+    flex: 100;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+  header .convert__button--wrapper {
+    margin: 0;
+    padding: 0;
+  }
+  header h1 {
+    display: none;
+  }
+  .Moneyview__wrapper {
+    font-size: 1.5rem;
+  }
 }
